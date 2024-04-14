@@ -1,0 +1,56 @@
+plugins {
+    id 'jacoco'
+}
+
+
+dependencies {
+    /*** annotation processor ***/
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+    testCompileOnly libs.lombok
+    testAnnotationProcessor libs.lombok
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy 'jacocoTestReport'
+}
+
+jacocoTestReport {
+    reports {
+        xml.setRequired(false)
+        csv.setRequired(false)
+        html.setRequired(true)
+        html.destination(layout.buildDirectory.file("jacocoHtml").get().asFile)
+    }
+    finalizedBy 'jacocoTestCoverageVerification'
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            setElement('CLASS')
+
+            // 라인 커버리지 제한을 80%로 설정
+            limit {
+                setCounter('LINE')
+                setValue('COVEREDRATIO')
+                setMinimum(BigDecimal.valueOf(0.80))
+            }
+
+            // 빈 줄을 제외한 코드의 라인수를 최대 200라인으로 제한
+            limit {
+                setCounter('BRANCH')
+                setValue('TOTALCOUNT')
+                setMaximum(BigDecimal.valueOf(200))
+            }
+
+            // 브랜치 커버리지 제한을 80%로 설정
+            limit {
+                setCounter('BRANCH')
+                setValue('COVEREDRATIO')
+                setMinimum(BigDecimal.valueOf(0.80))
+            }
+        }
+    }
+}

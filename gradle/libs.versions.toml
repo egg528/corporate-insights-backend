@@ -11,6 +11,9 @@ junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine"}
 mysql-connector-j = { module = "com.mysql:mysql-connector-j"}
 h2 = { module = "com.h2database:h2"}
 
+### other library ###
+lombok = { module = "org.projectlombok:lombok" }
+
 [plugins]
 spring-boot = { id = "org.springframework.boot", version = "3.2.4" }
 spring-dependency-management = { id = "io.spring.dependency-management", version = "1.1.4" }
