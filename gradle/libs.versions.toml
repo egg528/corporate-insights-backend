@@ -1,0 +1,16 @@
+[libraries]
+### spring ###
+spring-cloud-dependencies = { module = "org.springframework.cloud:spring-cloud-dependencies", version = "2023.0.1" }
+spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
+
+### test ###
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api"}
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine"}
+
+### database ###
+mysql-connector-j = { module = "com.mysql:mysql-connector-j"}
+h2 = { module = "com.h2database:h2"}
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version = "3.2.4" }
+spring-dependency-management = { id = "io.spring.dependency-management", version = "1.1.4" }
