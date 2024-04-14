@@ -28,7 +28,7 @@ subprojects {
 
     dependencies {
         /*** spring cloud ***/
-        platform(libs.spring.cloud.dependencies)
+        implementation platform(libs.spring.cloud.dependencies)
 
         /*** test ***/
         testImplementation libs.junit.jupiter.api
