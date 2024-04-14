@@ -1,3 +1,4 @@
 rootProject.name = 'corporate-insights-backend'
 
 include ":domain"
+include ":application"
