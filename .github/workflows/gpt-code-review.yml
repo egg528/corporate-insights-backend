@@ -20,5 +20,4 @@ jobs:
           OPENAI_API_ENDPOINT: https://api.openai.com/v1
           LANGUAGE: Korean
           MODEL: gpt-3.5-turbo
-          max_tokens: 10000
 
