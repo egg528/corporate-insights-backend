@@ -1,0 +1,8 @@
+dependencies {
+    implementation libs.spring.cloud.starter.openfeign
+    implementation libs.feign.hc5
+    implementation libs.feign.micrometer
+
+    testImplementation libs.jackson.databind
+    testImplementation libs.spring.cloud.contract.wiremock
+}

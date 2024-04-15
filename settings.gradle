@@ -1,1 +1,7 @@
 rootProject.name = 'corporate-insights-backend'
+
+include(":api")
+include(":domain")
+include(":application")
+include(":infra:db-core")
+include(":infra:clients")

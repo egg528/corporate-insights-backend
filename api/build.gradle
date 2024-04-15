@@ -1,0 +1,21 @@
+bootJar {
+    enabled = true
+}
+
+jar {
+    enabled = false
+}
+
+dependencies {
+    /*** project ***/
+
+    /*** spring ***/
+    implementation libs.spring.boot.starter.web
+    implementation libs.springdoc.openapi.starter.webmvc.ui
+
+    /*** annotation processor ***/
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+    testCompileOnly libs.lombok
+    testAnnotationProcessor libs.lombok
+}
