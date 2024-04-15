@@ -18,8 +18,10 @@ feign-micrometer = { module = "io.github.openfeign:feign-micrometer" }
 jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind" }
 
 ### test ###
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api"}
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine"}
+
 
 [plugins]
 spring-boot = { id = "org.springframework.boot", version = "3.2.4" }

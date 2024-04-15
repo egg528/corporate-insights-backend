@@ -1,8 +1,20 @@
 dependencies {
+    /*** project ***/
+    implementation(project(":domain"))
+    implementation(project(":common:utils"))
+
     implementation libs.spring.cloud.starter.openfeign
     implementation libs.feign.hc5
     implementation libs.feign.micrometer
 
+    /*** annotation processor ***/
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+    testCompileOnly libs.lombok
+    testAnnotationProcessor libs.lombok
+
+    /*** test ***/
     testImplementation libs.jackson.databind
     testImplementation libs.spring.cloud.contract.wiremock
+    testImplementation libs.spring.boot.starter.test
 }
