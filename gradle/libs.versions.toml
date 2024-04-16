@@ -8,6 +8,7 @@ spring-cloud-contract-wiremock = { module = "org.springframework.cloud:spring-cl
 springdoc-openapi-starter-webmvc-ui = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version = "2.5.0" }
 
 ### database ###
+spring-boot-start-jdbc = {module = "org.springframework.boot:spring-boot-starter-jdbc"}
 mysql-connector-j = { module = "com.mysql:mysql-connector-j"}
 h2 = { module = "com.h2database:h2"}
 
@@ -18,6 +19,7 @@ feign-micrometer = { module = "io.github.openfeign:feign-micrometer" }
 jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind" }
 
 ### test ###
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api"}
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine"}
 
