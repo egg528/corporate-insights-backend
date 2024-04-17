@@ -6,11 +6,13 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public class CorporateClientMapper {
     private static final DateTimeFormatter MODIFY_DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMdd");
 
     public static Corporate toDomain(XMLStreamReader reader) throws XMLStreamException {
+        Objects.requireNonNull(reader, "XMLStreamReader must not be null");
         String corpCode = null, corpName = null, stockCode = null, modifyDate = null;
 
         while (reader.hasNext()) {
