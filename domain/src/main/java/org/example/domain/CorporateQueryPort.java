@@ -1,8 +1,8 @@
 package org.example.domain;
 
-import java.util.List;
+
 import java.util.Map;
 
-public interface ReadCorporatePort {
+public interface CorporateQueryPort {
     Map<String, Corporate> findAll();
 }

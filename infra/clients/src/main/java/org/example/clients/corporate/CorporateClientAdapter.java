@@ -5,7 +5,7 @@ import org.example.XmlFileUtils;
 import org.example.ZipFileUtils;
 import org.example.clients.client.OpenDartClient;
 import org.example.domain.Corporate;
-import org.example.domain.LoadCorporatePort;
+import org.example.domain.CorporateImportPort;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -17,7 +17,7 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class CorporateClientAdapter implements LoadCorporatePort {
+public class CorporateClientAdapter implements CorporateImportPort {
 
     private final OpenDartClient openDartClient;
 

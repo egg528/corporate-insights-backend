@@ -4,9 +4,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.application.corporate.command.RenewCorporatesUseCase;
 import org.example.domain.Corporate;
-import org.example.domain.LoadCorporatePort;
-import org.example.domain.ReadCorporatePort;
-import org.example.domain.UpdateCorporatePort;
+import org.example.domain.CorporateImportPort;
+import org.example.domain.CorporateQueryPort;
+import org.example.domain.CorporateCommandPort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,15 +20,15 @@ import java.util.Map;
 @Transactional(isolation = Isolation.READ_COMMITTED)
 public class CorporateCommandService implements RenewCorporatesUseCase {
 
-    private final LoadCorporatePort loadCorporatePort;
-    private final UpdateCorporatePort updateCorporatePort;
-    private final ReadCorporatePort readCorporatePort;
+    private final CorporateImportPort corporateImportPort;
+    private final CorporateCommandPort updateCorporatePort;
+    private final CorporateQueryPort readCorporatePort;
 
     @Override
     public void renew() {
         List<Corporate> loadedCorporates;
         try {
-            loadedCorporates  = loadCorporatePort.loadAllCorporates();
+            loadedCorporates  = corporateImportPort.loadAllCorporates();
         } catch (Exception e){
             log.error("Failed to load corporates from the data source.",e);
             return;

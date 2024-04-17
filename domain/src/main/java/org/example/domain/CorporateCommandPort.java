@@ -1,6 +1,6 @@
 package org.example.domain;
 
-public interface UpdateCorporatePort {
+public interface CorporateCommandPort {
 
     void save(Corporate domain);
 }

@@ -2,8 +2,8 @@ package org.example.dbcore.corporate;
 
 import lombok.RequiredArgsConstructor;
 import org.example.domain.Corporate;
-import org.example.domain.ReadCorporatePort;
-import org.example.domain.UpdateCorporatePort;
+import org.example.domain.CorporateQueryPort;
+import org.example.domain.CorporateCommandPort;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
-public class CorporateDbCoreAdapter implements UpdateCorporatePort, ReadCorporatePort {
+public class CorporateDbCoreAdapter implements CorporateCommandPort, CorporateQueryPort {
     private final CorporateJpaRepository jpaRepository;
     private final CorporateJdbcRepository jdbcRepository;
 
