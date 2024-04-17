@@ -43,6 +43,8 @@ public class CorporateClientAdapter implements LoadCorporatePort {
             }
         }
 
+        reader.close();
+
         return corporates;
     }
 }

@@ -7,28 +7,22 @@ import java.nio.file.Paths;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import static java.nio.file.StandardOpenOption.CREATE_NEW;
+
 public class ZipFileUtils {
 
-    public static final String DEFAULT_ZIP_FILE_NAME = "/zipFile.zip";
+    public static final String DEFAULT_ZIP_FILE_NAME = "/zip-file.zip";
 
     public static void save(String targetPath, byte[] source) throws IOException {
         Path savePath = Paths.get(targetPath, DEFAULT_ZIP_FILE_NAME);
         Files.deleteIfExists(savePath);
-
-        try (FileOutputStream outputStream = new FileOutputStream(savePath.toFile())) {
-            outputStream.write(source);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        Files.write(savePath, source, CREATE_NEW);
     }
 
     public static void save(String targetPath, String fileName, byte[] source) throws IOException {
         Path savePath = Paths.get(targetPath, fileName);
         Files.deleteIfExists(savePath);
-
-        try (FileOutputStream outputStream = new FileOutputStream(savePath.toFile())) {
-            outputStream.write(source);
-        }
+        Files.write(savePath, source, CREATE_NEW);
     }
 
     public static void unZip(String targetPath) throws IOException {
