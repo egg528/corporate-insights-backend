@@ -13,7 +13,7 @@ import java.io.IOException;
 public class CorporateRenewScheduler {
     private final RenewCorporatesUseCase renewCorporatesUseCase;
 
-    @Scheduled(cron = "0 0 10 * * ?")
+    @Scheduled(cron = "0 0 10 * * ?", zone = "Asia/Seoul")
     public void renewCorporates() throws XMLStreamException, IOException {
         renewCorporatesUseCase.renew();
     }
