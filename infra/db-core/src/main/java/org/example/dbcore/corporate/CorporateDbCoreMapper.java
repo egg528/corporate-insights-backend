@@ -1,6 +1,6 @@
 package org.example.dbcore.corporate;
 
-import org.example.domain.Corporate;
+import org.example.domain.corporate.Corporate;
 
 import java.util.Objects;
 

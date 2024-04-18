@@ -1,9 +1,9 @@
 package org.example.dbcore.corporate;
 
 import lombok.RequiredArgsConstructor;
-import org.example.domain.Corporate;
-import org.example.domain.CorporateQueryPort;
-import org.example.domain.CorporateCommandPort;
+import org.example.domain.corporate.Corporate;
+import org.example.domain.corporate.CorporateQueryPort;
+import org.example.domain.corporate.CorporateCommandPort;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;

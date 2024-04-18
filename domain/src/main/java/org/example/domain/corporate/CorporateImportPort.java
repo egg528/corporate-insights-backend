@@ -1,4 +1,4 @@
-package org.example.domain;
+package org.example.domain.corporate;
 
 import javax.xml.stream.XMLStreamException;
 import java.io.IOException;

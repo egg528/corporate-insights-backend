@@ -1,6 +1,6 @@
 package org.example.clients.corporate;
 
-import org.example.domain.Corporate;
+import org.example.domain.corporate.Corporate;
 
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
