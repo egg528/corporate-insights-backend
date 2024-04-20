@@ -1,4 +1,4 @@
-package org.example.api.config;
+package org.example.api.config.scheduler;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;

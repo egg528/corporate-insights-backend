@@ -1,7 +1,7 @@
-package org.example.domain.exception;
+package org.example.common.exception;
 
 
-public class BusinessRuleException extends CorporateInsightsException{
+public class BusinessRuleException extends CorporateInsightsException {
 
     public BusinessRuleException(ExceptionType exceptionType, Object data) {
         super(exceptionType, data);

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.common;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;

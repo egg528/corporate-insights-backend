@@ -7,13 +7,6 @@ dependencies {
     implementation libs.feign.hc5
     implementation libs.feign.micrometer
 
-
-    /*** annotation processor ***/
-    compileOnly libs.lombok
-    annotationProcessor libs.lombok
-    testCompileOnly libs.lombok
-    testAnnotationProcessor libs.lombok
-
     /*** test ***/
     testImplementation libs.jackson.databind
     testImplementation libs.spring.cloud.contract.wiremock

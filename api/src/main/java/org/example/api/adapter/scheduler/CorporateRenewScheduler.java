@@ -1,4 +1,4 @@
-package org.example.api.scheduler;
+package org.example.api.adapter.scheduler;
 
 import lombok.RequiredArgsConstructor;
 import org.example.application.corporate.command.RenewCorporatesUseCase;
