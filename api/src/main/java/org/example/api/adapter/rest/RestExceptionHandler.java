@@ -18,7 +18,7 @@ public class RestExceptionHandler {
     }
 
     @ExceptionHandler(BusinessRuleException.class)
-    public ResponseEntity<ApiResponse<?>> handleCorporateInsightsException(BusinessRuleException exception) {
+    public ResponseEntity<ApiResponse<?>> handleBusinessRuleException(BusinessRuleException exception) {
         return buildErrorResponse(exception.getExceptionType());
     }
 
@@ -26,7 +26,6 @@ public class RestExceptionHandler {
     public ResponseEntity<ApiResponse<?>> handleException(Exception exception) {
         return buildErrorResponse(ExceptionType.DEFAULT);
     }
-
 
     private ResponseEntity<ApiResponse<?>> buildErrorResponse(ExceptionType exceptionType) {
         return ResponseEntity.status(HttpStatus.valueOf(exceptionType.getHttpStatus()))
