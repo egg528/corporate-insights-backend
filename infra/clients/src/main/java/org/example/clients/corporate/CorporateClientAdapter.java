@@ -1,8 +1,8 @@
 package org.example.clients.corporate;
 
 import lombok.RequiredArgsConstructor;
-import org.example.common.XmlFileUtils;
-import org.example.common.ZipFileUtils;
+import org.example.utils.XmlFileUtils;
+import org.example.utils.ZipFileUtils;
 import org.example.clients.client.OpenDartClient;
 import org.example.domain.corporate.Corporate;
 import org.example.domain.corporate.CorporateImportPort;

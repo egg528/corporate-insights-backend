@@ -1,20 +1,9 @@
 package org.example.api.support.rest;
 
-import lombok.Getter;
-import org.example.common.exception.ExceptionType;
+import org.example.exception.ExceptionType;
 
-@Getter
-public record ApiResponse<T> (
-        ResultType resultType,
-        T data,
-        ErrorMessage errorMessage
-) {
-
-    private record ErrorMessage(
-            String code,
-            String message,
-            Object data
-    ) {
+public record ApiResponse<T> (ResultType resultType, T data, ErrorMessage errorMessage) {
+    private record ErrorMessage(String code, String message, Object data) {
         public ErrorMessage(ExceptionType exceptionType) {
             this(exceptionType.getErrorCode(), exceptionType.getMessage(), null);
         }

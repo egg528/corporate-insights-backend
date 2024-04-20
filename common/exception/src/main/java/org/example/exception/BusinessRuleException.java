@@ -1,4 +1,4 @@
-package org.example.common.exception;
+package org.example.exception;
 
 
 public class BusinessRuleException extends CorporateInsightsException {
