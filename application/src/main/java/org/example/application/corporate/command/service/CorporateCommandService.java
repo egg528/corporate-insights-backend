@@ -2,7 +2,7 @@ package org.example.application.corporate.command.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.application.corporate.command.RenewCorporatesUseCase;
+import org.example.application.corporate.command.RenewCorporateUseCase;
 import org.example.domain.corporate.Corporate;
 import org.example.domain.corporate.CorporateImportPort;
 import org.example.domain.corporate.CorporateQueryPort;
@@ -18,14 +18,14 @@ import java.util.Map;
 @Slf4j
 @RequiredArgsConstructor
 @Transactional(isolation = Isolation.READ_COMMITTED)
-public class CorporateCommandService implements RenewCorporatesUseCase {
+public class CorporateCommandService implements RenewCorporateUseCase {
 
     private final CorporateImportPort corporateImportPort;
     private final CorporateCommandPort updateCorporatePort;
     private final CorporateQueryPort readCorporatePort;
 
     @Override
-    public void renew() {
+    public void renewAll() {
         List<Corporate> loadedCorporates;
         try {
             loadedCorporates  = corporateImportPort.loadAllCorporates();
