@@ -1,11 +1,11 @@
 package org.example.clients.corporate;
 
 import lombok.RequiredArgsConstructor;
-import org.example.XmlFileUtils;
-import org.example.ZipFileUtils;
+import org.example.utils.XmlFileUtils;
+import org.example.utils.ZipFileUtils;
 import org.example.clients.client.OpenDartClient;
-import org.example.domain.Corporate;
-import org.example.domain.CorporateImportPort;
+import org.example.domain.corporate.Corporate;
+import org.example.domain.corporate.CorporateImportPort;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 

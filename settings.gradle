@@ -6,3 +6,6 @@ include(":application")
 include(":infra:db-core")
 include(":infra:clients")
 include(":common:utils")
+include(":common:exception")
+
+

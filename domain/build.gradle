@@ -4,11 +4,8 @@ plugins {
 
 
 dependencies {
-    /*** annotation processor ***/
-    compileOnly libs.lombok
-    annotationProcessor libs.lombok
-    testCompileOnly libs.lombok
-    testAnnotationProcessor libs.lombok
+    /*** project ***/
+    implementation project(":common:exception")
 }
 
 test {

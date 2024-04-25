@@ -3,13 +3,8 @@ dependencies {
     implementation project(":domain")
     implementation project(":infra:clients")
     implementation project(":infra:db-core")
+    implementation project(":common:exception")
 
     /*** spring ***/
     implementation libs.spring.boot.starter.web
-
-    /*** annotation processor ***/
-    compileOnly libs.lombok
-    annotationProcessor libs.lombok
-    testCompileOnly libs.lombok
-    testAnnotationProcessor libs.lombok
 }
