@@ -19,5 +19,5 @@ jobs:
           # optional
           OPENAI_API_ENDPOINT: https://api.openai.com/v1
           LANGUAGE: Korean
-          MODEL: gpt-4-turbo
+          MODEL: gpt-3.5-turbo
 
