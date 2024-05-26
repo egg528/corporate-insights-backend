@@ -14,9 +14,7 @@ public class ZipFileUtils {
     public static final String DEFAULT_ZIP_FILE_NAME = "/zip-file.zip";
 
     public static void save(String targetPath, byte[] source) throws IOException {
-        Path savePath = Paths.get(targetPath, DEFAULT_ZIP_FILE_NAME);
-        Files.deleteIfExists(savePath);
-        Files.write(savePath, source, CREATE_NEW);
+        save(targetPath, DEFAULT_ZIP_FILE_NAME, source);
     }
 
     public static void save(String targetPath, String fileName, byte[] source) throws IOException {
@@ -26,8 +24,11 @@ public class ZipFileUtils {
     }
 
     public static void unZip(String targetPath) throws IOException {
-        Path zipPath = Paths.get(targetPath, DEFAULT_ZIP_FILE_NAME);
-        try (ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(zipPath.toFile()))) {
+        unZip(targetPath, DEFAULT_ZIP_FILE_NAME);
+    }
+
+    public static void unZip(String targetPath, String fileName) throws IOException {
+        try (ZipInputStream zipInputStream = createZipInputStream(targetPath, fileName)) {
             ZipEntry zipEntry;
             while ((zipEntry = zipInputStream.getNextEntry()) != null) {
                 Path savePath = Paths.get(targetPath, zipEntry.getName());
@@ -37,15 +38,9 @@ public class ZipFileUtils {
         }
     }
 
-    public static void unZip(String targetPath, String fileName) throws IOException {
-        Path zipPath = Paths.get(targetPath, fileName);
-        try (ZipInputStream zipInputStream = new ZipInputStream(new FileInputStream(zipPath.toFile()))) {
-            ZipEntry zipEntry;
-            while ((zipEntry = zipInputStream.getNextEntry()) != null) {
-                Path savePath = Paths.get(targetPath, zipEntry.getName());
-                Files.deleteIfExists(savePath);
-                Files.copy(zipInputStream, savePath);
-            }
-        }
+    private static ZipInputStream createZipInputStream(String zipFilePath, String fileName) throws FileNotFoundException {
+        Path zipPath = Paths.get(zipFilePath, fileName);
+
+        return new ZipInputStream(new FileInputStream(zipPath.toFile()));
     }
 }
