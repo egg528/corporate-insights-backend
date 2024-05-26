@@ -19,6 +19,9 @@ feign-micrometer = { module = "io.github.openfeign:feign-micrometer" }
 jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind" }
 
 ### test ###
+spock-bom = { module = "org.spockframework:spock-bom", version = "2.3-groovy-4.0" }
+spock-core = { module = "org.spockframework:spock-core" }
+groovy = { module = "org.apache.groovy:groovy" }
 spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api"}
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine"}

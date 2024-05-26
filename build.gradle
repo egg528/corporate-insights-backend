@@ -1,5 +1,6 @@
 plugins {
     id 'java-library'
+    id 'groovy'
     alias(libs.plugins.spring.boot) apply false
     alias(libs.plugins.spring.dependency.management) apply false
 }
@@ -15,6 +16,7 @@ allprojects {
 
 subprojects {
     apply plugin: 'java-library'
+    apply plugin: 'groovy'
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
@@ -35,8 +37,16 @@ subprojects {
         annotationProcessor libs.lombok
 
         /*** test ***/
+        /* spock */
+        testImplementation libs.groovy
+        testImplementation platform(libs.spock.bom)
+        testImplementation libs.spock.core
+
+        /* junit */
         testImplementation libs.junit.jupiter.api
         testRuntimeOnly libs.junit.jupiter.engine
+
+        /* lombok */
         testCompileOnly libs.lombok
         testAnnotationProcessor libs.lombok
     }
