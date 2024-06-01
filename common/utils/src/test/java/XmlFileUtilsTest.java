@@ -9,14 +9,14 @@ import java.io.FileNotFoundException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("XMLFileUtils 단위 테스트")
+@DisplayName("XmlFileUtils 단위 테스트")
 public class XmlFileUtilsTest {
 
     @Test
-    @DisplayName("정상적인 XML 파일을 오류 없이 읽어드릴 수 있다.")
+    @DisplayName("정상적인 xml 파일을 오류 없이 읽어드릴 수 있다.")
     public void parseValidXmlFile() {
         // given
-        String filePath = "src/test/resources/CORPCODE.xml";
+        String filePath = "src/test/resources/source.xml";
 
         // when
         XMLStreamReader reader = null;
@@ -47,10 +47,10 @@ public class XmlFileUtilsTest {
     }
 
     @Test
-    @DisplayName("XML 형식이 아닌 파일을 읽을 경우 오류를 반환한다.")
+    @DisplayName("xml 형식이 아닌 파일을 읽을 경우 오류를 반환한다.")
     public void parseInvalidFile() {
         // given
-        String invalidFilePath = "src/test/resources/zip-file.zip";
+        String invalidFilePath = "src/test/resources/source.zip";
 
         // when & then
         assertThrows(XMLStreamException.class, () -> {

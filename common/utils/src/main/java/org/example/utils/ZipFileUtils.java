@@ -11,7 +11,7 @@ import static java.nio.file.StandardOpenOption.CREATE_NEW;
 
 public class ZipFileUtils {
 
-    public static final String DEFAULT_ZIP_FILE_NAME = "/zip-file.zip";
+    private static final String DEFAULT_ZIP_FILE_NAME = "/zip-file.zip";
 
     public static void save(String targetPath, byte[] source) throws IOException {
         save(targetPath, DEFAULT_ZIP_FILE_NAME, source);
@@ -28,7 +28,7 @@ public class ZipFileUtils {
     }
 
     public static void unZip(String targetPath, String fileName) throws IOException {
-        try (ZipInputStream zipInputStream = createZipInputStream(targetPath, fileName)) {
+        try (ZipInputStream zipInputStream = parse(targetPath, fileName)) {
             ZipEntry zipEntry;
             while ((zipEntry = zipInputStream.getNextEntry()) != null) {
                 Path savePath = Paths.get(targetPath, zipEntry.getName());
@@ -38,7 +38,7 @@ public class ZipFileUtils {
         }
     }
 
-    private static ZipInputStream createZipInputStream(String zipFilePath, String fileName) throws FileNotFoundException {
+    private static ZipInputStream parse(String zipFilePath, String fileName) throws FileNotFoundException {
         Path zipPath = Paths.get(zipFilePath, fileName);
 
         return new ZipInputStream(new FileInputStream(zipPath.toFile()));

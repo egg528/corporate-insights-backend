@@ -5,12 +5,12 @@ import spock.lang.Title
 import javax.xml.stream.XMLStreamException
 import javax.xml.stream.XMLStreamReader
 
-@Title("XMLFileUtils 단위 테스트")
+@Title("XmlFileUtils 단위 테스트")
 class XmlFileUtilsSpec extends Specification {
 
-    def "정상적인 XML 파일을 오류 없이 읽어드릴 수 있다."() {
+    def "정상적인 xml 파일을 오류 없이 읽어드릴 수 있다."() {
         given:
-        String filePath = "src/test/resources/CORPCODE.xml"
+        String filePath = "src/test/resources/source.xml"
 
         when:
         XMLStreamReader reader = XmlFileUtils.parse(filePath)
@@ -33,9 +33,9 @@ class XmlFileUtilsSpec extends Specification {
         thrown(FileNotFoundException)
     }
 
-    def "XML 형식이 아닌 파일을 읽을 경우 오류를 반환한다."() {
+    def "xml 형식이 아닌 파일을 읽을 경우 오류를 반환한다."() {
         given:
-        String invalidFilePath = "src/test/resources/zip-file.zip"
+        String invalidFilePath = "src/test/resources/source.zip"
 
         when:
         XmlFileUtils.parse(invalidFilePath)
