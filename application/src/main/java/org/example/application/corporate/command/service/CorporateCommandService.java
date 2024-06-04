@@ -28,7 +28,7 @@ public class CorporateCommandService implements RenewCorporateUseCase {
     public void renewAll() {
         List<Corporate> loadedCorporates;
         try {
-            loadedCorporates  = corporateImportPort.loadAllCorporates();
+            loadedCorporates  = corporateImportPort.importAllCorporates();
         } catch (Exception e){
             log.error("Failed to load corporates from the data source.",e);
             return;

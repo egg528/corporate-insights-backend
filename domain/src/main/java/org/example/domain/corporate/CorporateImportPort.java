@@ -7,5 +7,5 @@ import java.util.List;
 public interface CorporateImportPort {
 
     // TODO: Memory 사용량 확인해보고 너무 크다면 Stream으로 변경
-    List<Corporate> loadAllCorporates() throws IOException, XMLStreamException;
+    List<Corporate> importAllCorporates() throws IOException, XMLStreamException;
 }

@@ -7,6 +7,9 @@ dependencies {
     implementation libs.feign.hc5
     implementation libs.feign.micrometer
 
+    /*** scraper ***/
+    implementation libs.jsoup
+
     /*** test ***/
     testImplementation libs.jackson.databind
     testImplementation libs.spring.cloud.contract.wiremock

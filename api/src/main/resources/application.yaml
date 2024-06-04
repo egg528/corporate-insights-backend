@@ -5,3 +5,6 @@ spring:
       local:
         - clients
         - db-core
+  batch:
+    job:
+      enabled: false
