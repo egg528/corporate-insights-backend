@@ -7,9 +7,6 @@ scraper:
   daily-stock-price:
     url: https://finance.naver.com/item/sise_day.naver?code=%s&page=%s
 
-
-
-
 download:
   path: /Users/wkwon/Desktop
   file-path: /Users/wkwon/Desktop/CORPCODE.xml
