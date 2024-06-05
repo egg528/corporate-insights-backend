@@ -3,7 +3,7 @@ client:
     url: https://opendart.fss.or.kr/api
     key: 552fed265ebc64862d4399465f84bd16bf1a1c4e
 
-scrapper:
+scraper:
   daily-stock-price:
     url: https://finance.naver.com/item/sise_day.naver?code=%s&page=%s
 

@@ -19,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DailyStockPriceJsoupScraper {
     private final NaverPageParser naverPageParser;
-    @Value("${scrapper.daily-stock-price.url}")
+    @Value("${scraper.daily-stock-price.url}")
     private String url;
 
     public int getLastPageNumber(String stockCode) throws IOException {
