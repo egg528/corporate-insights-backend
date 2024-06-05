@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CorporateDbCoreAdapter implements CorporateCommandPort, CorporateQueryPort {
     private final CorporateJpaRepository jpaRepository;
-    private final CorporateJdbcRepository jdbcRepository;
 
     @Override
     public void save(Corporate domain) {
@@ -22,7 +21,7 @@ public class CorporateDbCoreAdapter implements CorporateCommandPort, CorporateQu
 
     @Override
     public Map<String, Corporate> findAll() {
-        return jdbcRepository.findAll()
+        return jpaRepository.findAll()
                 .stream()
                 .collect(Collectors.toMap(CorporateEntity::getCode, CorporateDbCoreMapper::toDomain));
     }

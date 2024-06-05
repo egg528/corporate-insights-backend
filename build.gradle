@@ -37,6 +37,8 @@ subprojects {
         annotationProcessor libs.lombok
 
         /*** test ***/
+        testImplementation libs.spring.boot.starter.test
+
         /* spock */
         testImplementation libs.groovy
         testImplementation platform(libs.spock.bom)

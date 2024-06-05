@@ -2,7 +2,6 @@ package org.example.domain.corporate;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 
 import java.time.LocalDate;

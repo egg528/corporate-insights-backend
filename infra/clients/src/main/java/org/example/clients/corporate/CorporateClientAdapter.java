@@ -28,7 +28,7 @@ public class CorporateClientAdapter implements CorporateImportPort {
     private String DEFAULT_CORPORATES_FILE_PATH;
 
     @Override
-    public List<Corporate> loadAllCorporates() throws IOException, XMLStreamException {
+    public List<Corporate> importAllCorporates() throws IOException, XMLStreamException {
         byte[] res = openDartClient.findCorporatesZipFile();
         ZipFileUtils.save(DEFAULT_DOWNLOAD_PATH, res);
         ZipFileUtils.unZip(DEFAULT_DOWNLOAD_PATH);

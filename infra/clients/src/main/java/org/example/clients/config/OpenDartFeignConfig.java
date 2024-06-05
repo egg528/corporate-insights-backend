@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OpenDartFeignConfig {
 
-    @Value("${api.open-dart.key}")
+    @Value("${client.open-dart.key}")
     private String openDartKey;
 
     @Bean

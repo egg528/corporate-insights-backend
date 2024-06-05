@@ -1,6 +1,5 @@
 package org.example.domain.corporate;
 
-
 import java.util.Map;
 
 public interface CorporateQueryPort {

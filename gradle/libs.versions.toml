@@ -1,14 +1,16 @@
 [libraries]
 ### spring ###
+spring-context = { module = "org.springframework:spring-context" }
 spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
-spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
+spring-boot-starter-batch = { module = "org.springframework.boot:spring-boot-starter-batch" }
 spring-cloud-dependencies = { module = "org.springframework.cloud:spring-cloud-dependencies", version = "2023.0.1" }
 spring-cloud-starter-openfeign = { module = "org.springframework.cloud:spring-cloud-starter-openfeign" }
 spring-cloud-contract-wiremock = { module = "org.springframework.cloud:spring-cloud-contract-wiremock" }
 springdoc-openapi-starter-webmvc-ui = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version = "2.5.0" }
 
 ### database ###
-spring-boot-start-jdbc = {module = "org.springframework.boot:spring-boot-starter-jdbc"}
+spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
+spring-boot-starter-jdbc = {module = "org.springframework.boot:spring-boot-starter-jdbc"}
 mysql-connector-j = { module = "com.mysql:mysql-connector-j"}
 h2 = { module = "com.h2database:h2"}
 
@@ -17,6 +19,7 @@ lombok = { module = "org.projectlombok:lombok" }
 feign-hc5 = { module = "io.github.openfeign:feign-hc5" }
 feign-micrometer = { module = "io.github.openfeign:feign-micrometer" }
 jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind" }
+jsoup = { module = "org.jsoup:jsoup", version = "1.17.2" }
 
 ### test ###
 spock-bom = { module = "org.spockframework:spock-bom", version = "2.3-groovy-4.0" }

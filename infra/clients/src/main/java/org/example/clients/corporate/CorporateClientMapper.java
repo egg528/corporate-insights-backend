@@ -11,6 +11,8 @@ import java.util.Objects;
 public class CorporateClientMapper {
     private static final DateTimeFormatter MODIFY_DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMdd");
 
+    private CorporateClientMapper() {}
+
     public static Corporate toDomain(XMLStreamReader reader) throws XMLStreamException {
         Objects.requireNonNull(reader, "XMLStreamReader must not be null");
         String corpCode = null, corpName = null, stockCode = null, modifyDate = null;
