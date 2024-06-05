@@ -6,7 +6,6 @@ import org.example.domain.corporate.CorporateQueryPort;
 import org.example.domain.corporate.CorporateCommandPort;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
