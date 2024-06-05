@@ -2,17 +2,13 @@ package org.example.application.batch;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dbcore.corporate.CorporateEntity;
-import org.example.domain.corporate.Corporate;
-import org.example.domain.corporate.CorporateQueryPort;
 import org.example.domain.stock.DailyStockPrice;
 import org.example.domain.stock.DailyStockPriceCommandPort;
 import org.example.domain.stock.DailyStockPriceImportPort;
 import org.example.domain.stock.DailyStockPriceQueryPort;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.explore.JobExplorer;
 import org.springframework.batch.core.job.builder.JobBuilder;
-import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.item.ItemProcessor;
@@ -86,5 +82,4 @@ public class BatchConfig {
                 .start(importDailyStockPricesStep())
                 .build();
     }
-
 }
