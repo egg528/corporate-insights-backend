@@ -24,7 +24,10 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-
+/**
+ * 일별 주가 정보 Scraping용 Batch 구성요소
+ * scheduler를 이용하기 위해 관리 포인트를 줄이기 위해 application module에 작성
+ */
 @Configuration
 @RequiredArgsConstructor
 public class BatchConfig {
