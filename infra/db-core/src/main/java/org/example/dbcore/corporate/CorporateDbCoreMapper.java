@@ -5,6 +5,9 @@ import org.example.domain.corporate.Corporate;
 import java.util.Objects;
 
 public class CorporateDbCoreMapper {
+
+    private CorporateDbCoreMapper() {}
+
     public static CorporateEntity toEntity(Corporate domain) {
         Objects.requireNonNull(domain, "Corporate must not be null");
         return CorporateEntity.builder()

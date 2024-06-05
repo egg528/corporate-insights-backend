@@ -5,6 +5,9 @@ import org.example.domain.stock.DailyStockPrice;
 import java.util.Objects;
 
 public class DailyStockPriceDbCoreMapper {
+
+    private DailyStockPriceDbCoreMapper() {}
+
     public static DailyStockPriceEntity toEntity(DailyStockPrice domain) {
         Objects.requireNonNull(domain, "DailyStockPrice must not be null");
         return DailyStockPriceEntity.builder()
