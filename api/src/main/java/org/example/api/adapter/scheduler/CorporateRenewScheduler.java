@@ -4,6 +4,8 @@ import org.example.application.corporate.command.RenewCorporateUseCase;
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -37,5 +39,12 @@ public class CorporateRenewScheduler {
                 new JobParametersBuilder()
                         .addLocalDate("run.date", LocalDate.now()).toJobParameters()
         );
+    }
+
+    @Bean
+    public CommandLineRunner commandLineRunner() {
+        return args -> {
+          renewCorporateUseCase.renewAll();
+        };
     }
 }

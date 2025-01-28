@@ -18,8 +18,15 @@ import static lombok.AccessLevel.PROTECTED;
 @ToString
 public class DailyStockPriceEntity extends BaseEntity {
 
-    @EmbeddedId
-    private DailyStockPriceKey key;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "STOCK_CODE", nullable = false)
+    private String stockCode;
+
+    @Column(name = "DATE", nullable = false)
+    private LocalDate date;
 
     @Column(name = "CLOSING", nullable = false)
     private int closing;
@@ -42,7 +49,8 @@ public class DailyStockPriceEntity extends BaseEntity {
     public static RowMapper<DailyStockPriceEntity> getRowMapper() {
         return ((rs, rowNum) ->
                 DailyStockPriceEntity.builder()
-                        .key(new DailyStockPriceKey(rs.getString("STOCK_CODE"), rs.getObject("DATE", LocalDate.class)))
+                        .stockCode(rs.getString("STOCK_CODE"))
+                        .date(rs.getObject("DATE", LocalDate.class))
                         .closing(rs.getInt("CLOSING"))
                         .variation(rs.getInt("VARIATION"))
                         .opening(rs.getInt("OPENING"))

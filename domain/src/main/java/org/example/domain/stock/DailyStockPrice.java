@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @Builder
 @AllArgsConstructor
 public class DailyStockPrice {
+    private Long id;
     private String stockCode;
     private LocalDate date;
     private int closing;
