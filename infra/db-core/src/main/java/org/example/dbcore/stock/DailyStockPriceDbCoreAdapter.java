@@ -21,7 +21,7 @@ public class DailyStockPriceDbCoreAdapter implements DailyStockPriceCommandPort,
 
     @Override
     public Optional<DailyStockPrice> findRecentDailyStockPrice(String stockCode) {
-        return jpaRepository.findTop1ByStockCodeOrderByDateDesc(stockCode)
+        return jpaRepository.findTop1ByKeyStockCodeOrderByKeyDateDesc(stockCode)
                 .map(DailyStockPriceDbCoreMapper::toDomain);
     }
 }

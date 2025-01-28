@@ -11,9 +11,7 @@ public class DailyStockPriceDbCoreMapper {
     public static DailyStockPriceEntity toEntity(DailyStockPrice domain) {
         Objects.requireNonNull(domain, "DailyStockPrice must not be null");
         return DailyStockPriceEntity.builder()
-                .id(domain.getId())
-                .stockCode(domain.getStockCode())
-                .date(domain.getDate())
+                .key(new DailyStockPriceKey(domain.getStockCode(), domain.getDate()))
                 .closing(domain.getClosing())
                 .variation(domain.getVariation())
                 .opening(domain.getOpening())
@@ -26,9 +24,8 @@ public class DailyStockPriceDbCoreMapper {
     public static DailyStockPrice toDomain(DailyStockPriceEntity entity) {
         Objects.requireNonNull(entity, "DailyStockPriceEntity must not be null");
         return DailyStockPrice.builder()
-                .id(entity.getId())
-                .stockCode(entity.getStockCode())
-                .date(entity.getDate())
+                .stockCode(entity.getKey().getStockCode())
+                .date(entity.getKey().getDate())
                 .closing(entity.getClosing())
                 .variation(entity.getVariation())
                 .opening(entity.getOpening())

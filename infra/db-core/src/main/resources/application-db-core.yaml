@@ -1,10 +1,7 @@
 spring:
   jpa:
     open-in-view: false
-    hibernate:
-      ddl-auto: update
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    hibernate.ddl-auto: create
     properties.hibernate:
         format_sql: true
         show_sql: true
@@ -14,10 +11,9 @@ spring:
 
 datasource:
   core:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    jdbc-url: jdbc:mysql://www.one-bailey.o-r.kr:3306/CORPORATE-INSIGHTS
-    username: root
-    password: rootgaza
+    driver-class-name: org.h2.Driver
+    jdbc-url: jdbc:h2:mem:test
+    username: sa
     pool-name: core-db-pool
     data-source-properties:
       rewriteBatchedStatements: true

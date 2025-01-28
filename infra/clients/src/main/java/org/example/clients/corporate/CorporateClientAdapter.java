@@ -1,14 +1,13 @@
 package org.example.clients.corporate;
 
 import lombok.RequiredArgsConstructor;
+import org.example.utils.XmlFileUtils;
+import org.example.utils.ZipFileUtils;
 import org.example.clients.client.OpenDartClient;
 import org.example.domain.corporate.Corporate;
 import org.example.domain.corporate.CorporateImportPort;
-import org.example.utils.XmlFileUtils;
-import org.example.utils.ZipFileUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
@@ -40,11 +39,7 @@ public class CorporateClientAdapter implements CorporateImportPort {
         while (reader.hasNext()) {
             int event = reader.next();
             if (event == XMLStreamReader.START_ELEMENT && "list".equals(reader.getLocalName())) {
-                var corporate = CorporateClientMapper.toDomain(reader);
-
-                if (StringUtils.hasText(corporate.getStockCode())) {
-                    corporates.add(corporate);
-                }
+                corporates.add(CorporateClientMapper.toDomain(reader));
             }
         }
 

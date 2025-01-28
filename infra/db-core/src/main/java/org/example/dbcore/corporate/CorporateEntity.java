@@ -24,13 +24,13 @@ public class CorporateEntity extends BaseEntity {
     @Column(name = "CODE")
     private String code;
 
-    @Column(name = "STOCK_CODE", nullable = false)
+    @Column(name = "STOCK_CODE")
     private String stockCode;
 
-    @Column(name = "NAME", nullable = false)
+    @Column(name = "NAME")
     private String name;
 
-    @Column(name = "LAST_MODIFIED", nullable = false)
+    @Column(name = "LAST_MODIFIED")
     private LocalDate lastModified;
 
     public static RowMapper<CorporateEntity> getRowMapper() {
