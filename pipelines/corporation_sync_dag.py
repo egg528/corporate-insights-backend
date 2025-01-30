@@ -1,12 +1,15 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from airflow.utils.dates import timezone
+from airflow.utils import timezone
+from airflow.models import Variable
+
+import mysql.connector
+from mysql.connector import Error
+
+import pytz
 import logging
 from datetime import datetime
 import OpenDartReader
-import mysql.connector
-from mysql.connector import Error
-from airflow.models import Variable
 
 # 로깅 설정
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -122,7 +125,7 @@ def sync_corporations():
 # Airflow DAG 정의
 default_args = {
     "owner": "airflow",
-    "start_date": timezone.datetime(2024, 1, 1, tzinfo=timezone.timezone("Asia/Seoul")),
+    "start_date": timezone.datetime(2024, 1, 1, tzinfo=pytz.timezone("Asia/Seoul")),
     "retries": 1,
 }
 
